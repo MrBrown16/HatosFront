@@ -1,0 +1,12 @@
+{{jatekosok|json}}
+<div class="container">
+    <div class="row" *ngFor="let jat of jatekosok">
+        <div class="col"><input type="text" [disabled]="jat.edit" [(ngModel)]="jat.nev"></div>
+        <div class="col"><input type="text" [disabled]="jat.edit" [(ngModel)]="jat.szulIdo"></div>
+        <div class="col"><button (click)="setCurrent(jat)">Tippek</button></div>
+        <div class="col"><button (click)="jat.edit=!jat.edit">Módosít</button></div>
+        <div class="col" *ngIf="jat.edit"><button (click)="updateJatekos(jat.id,jat)">Save</button></div>
+        <div class="col"><button (click)="deleteJatekos(jat.id)">TÖröl</button></div>
+    </div>
+</div>
+<!-- {{jatekosok[1].tipp|json}} -->
